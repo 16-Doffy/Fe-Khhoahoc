@@ -1,0 +1,14 @@
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+    &--secondary{
+      background-color: green;
+      color: rgb(236, 236, 247);
+      border: 1px solid;
+    }
+}
