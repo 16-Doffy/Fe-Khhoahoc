@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import "./App.css";
 import CardTailWind from "./components/card/card-tailwin";
 
@@ -8,35 +7,16 @@ import CardTailWind from "./components/card/card-tailwin";
 // {/* <YtList></YtList> */}
 // {/* <Button>Primary</Button>
 // <Button secondary >Secondary</Button> */}
-const StyledTaiw = styled.div `
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-`;
+
 const App = () => {
   return (
-    <StyledTaiw>
-      <CardTailWind primary={true} frontSize="text-2xl"> </CardTailWind>
+    <div>
       <CardTailWind> </CardTailWind>
-      <CardTailWind primary={true}> </CardTailWind>
-      <CardTailWind > </CardTailWind>
-    </StyledTaiw>
+    </div>
   );
 };
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
 //<CardList><Card2/>
 // const theme = {
 //   //wanna change color in the future come here to change

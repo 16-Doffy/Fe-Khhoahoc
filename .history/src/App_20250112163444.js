@@ -14,12 +14,12 @@ grid-template-columns: repeat(4, 1fr);
 `;
 const App = () => {
   return (
-    <StyledTaiw>
-      <CardTailWind primary={true} frontSize="text-2xl"> </CardTailWind>
-      <CardTailWind> </CardTailWind>
+    <StyledTailw>
       <CardTailWind primary={true}> </CardTailWind>
       <CardTailWind > </CardTailWind>
-    </StyledTaiw>
+      <CardTailWind primary={true}> </CardTailWind>
+      <CardTailWind > </CardTailWind>
+    </StyledTailw>
   );
 };
 

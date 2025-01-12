@@ -8,18 +8,20 @@ import CardTailWind from "./components/card/card-tailwin";
 // {/* <YtList></YtList> */}
 // {/* <Button>Primary</Button>
 // <Button secondary >Secondary</Button> */}
-const StyledTaiw = styled.div `
-display: grid;
-grid-template-columns: repeat(4, 1fr);
+const StyledTailw = styled.div `
+     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 90px 30px;
+    padding: 30px;
 `;
 const App = () => {
   return (
-    <StyledTaiw>
-      <CardTailWind primary={true} frontSize="text-2xl"> </CardTailWind>
-      <CardTailWind> </CardTailWind>
+    <div>
       <CardTailWind primary={true}> </CardTailWind>
       <CardTailWind > </CardTailWind>
-    </StyledTaiw>
+      <CardTailWind primary={true}> </CardTailWind>
+      <CardTailWind > </CardTailWind>
+    </div>
   );
 };
 

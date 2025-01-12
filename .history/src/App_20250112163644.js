@@ -15,7 +15,7 @@ grid-template-columns: repeat(4, 1fr);
 const App = () => {
   return (
     <StyledTaiw>
-      <CardTailWind primary={true} frontSize="text-2xl"> </CardTailWind>
+      <CardTailWind primary={true}> </CardTailWind>
       <CardTailWind> </CardTailWind>
       <CardTailWind primary={true}> </CardTailWind>
       <CardTailWind > </CardTailWind>

@@ -1,43 +1,29 @@
-import styled from "styled-components";
 import "./App.css";
 import CardTailWind from "./components/card/card-tailwin";
-
+import Card2 from "./components/card/card2";
+import CardList from "./components/card/cardList";
 
 // import Button from "./components/button/button";
 // import YtList from "./components/youtube/YtList";
 // {/* <YtList></YtList> */}
 // {/* <Button>Primary</Button>
 // <Button secondary >Secondary</Button> */}
-const StyledTaiw = styled.div `
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-`;
+
+
 const App = () => {
   return (
-    <StyledTaiw>
-      <CardTailWind primary={true} frontSize="text-2xl"> </CardTailWind>
-      <CardTailWind> </CardTailWind>
-      <CardTailWind primary={true}> </CardTailWind>
-      <CardTailWind > </CardTailWind>
-    </StyledTaiw>
+    <div>
+   
+        <CardList>
+          <CardTailWind> </CardTailWind>
+        </CardList>
+     
+    </div>
   );
 };
 
 export default App;
 
-
-
-
-
-
-
-
-
-
-
-
-
-//<CardList><Card2/>
 // const theme = {
 //   //wanna change color in the future come here to change
 //   colors: {
