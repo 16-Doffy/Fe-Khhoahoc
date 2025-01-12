@@ -3,6 +3,7 @@ import "./App.css";
 import Photos from "./components/photo/Photos";
 const App = () => {
   return (
+
     <Photos />
   );
 };
