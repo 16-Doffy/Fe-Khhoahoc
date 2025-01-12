@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import v2 from "../../assets/img/v2.jpg";
 
 // Styled components
@@ -75,6 +75,12 @@ const CardNumber = styled.span`
   font-size: 18px;
   font-weight: bold;
   background: linear-gradient(to right, #e66465, #9198e5);
+
+  ${(props) => 
+  props.secondary &&
+    css`
+      background: linear-gradient(to right, rgb(6, 4, 128), rgb(6, 231, 126));
+    `};
   -webkit-background-clip: text;
   color: transparent;
   background-clip: text;
@@ -100,9 +106,8 @@ const CardIN = styled.span`
 const CardINIMG = styled.img`
   width: 10%;
 `;
-//crt+alt+L =>consolog
+
 const Card = () => {
-  
   return (
     <StyledCard>
       <CardImage>
@@ -128,7 +133,7 @@ const Card = () => {
         </CardTop>
         <CardFooter>
           <CardTitle>Comics Person</CardTitle>
-          <CardNumber>12,000 YSL</CardNumber>
+          <CardNumber secondary>12,000 YSL</CardNumber>
         </CardFooter>
       </CardContent>
     </StyledCard>

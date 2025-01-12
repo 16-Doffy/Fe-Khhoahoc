@@ -2,12 +2,46 @@ import React from "react";
 import styled from "styled-components";
 import v2 from "../../assets/img/v2.jpg";
 
-// Styled components
+
+
+
 const StyledCard = styled.div`
-  position: relative;
-  width: 400px;
-  margin: 50px auto;
+    position: relative;
+    width: 400px;
+    margin: 50px auto;
+    .card-image{
+        height: 400px;
+        width: 100%;
+        border-radius: 8px;
+        img{
+            border-radius: 18px;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+        }
+    }
+    .card-content{
+        position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: calc(100% - 36px);
+  padding: 10px;
+  bottom: 0;
+  background-color: white;
+  z-index: 10;
+  border-radius: 20px;
+  margin: 5px 55px;
+    }
+    
 `;
+
+// Styled components
+// const StyledCard = styled.div`
+//   position: relative;
+//   width: 400px;
+//   margin: 50px auto;
+// `;
 
 const CardImage = styled.div`
   height: 400px;
@@ -101,18 +135,19 @@ const CardINIMG = styled.img`
   width: 10%;
 `;
 //crt+alt+L =>consolog
-const Card = () => {
+const Card2 = () => {
   
   return (
-    <StyledCard>
-      <CardImage>
-        <CardIMG
+    <StyledCard >
+
+    <div class="card-image">
+        <img
           src="https://cdn.dribbble.com/userupload/17117959/file/original-2a01fcbb866d356d539462a5ab1b2d00.jpg?format=webp&resize=450x338&vertical=center"
           alt=""
         />
-      </CardImage>
+      </div>
 
-      <CardContent>
+      <div class="card-content"> 
         <CardTop>
           <CardUser>
             <UserAvatar src={v2} alt="" />
@@ -130,9 +165,9 @@ const Card = () => {
           <CardTitle>Comics Person</CardTitle>
           <CardNumber>12,000 YSL</CardNumber>
         </CardFooter>
-      </CardContent>
+        </div>
     </StyledCard>
   );
 };
 
-export default Card;
+export default Card2;

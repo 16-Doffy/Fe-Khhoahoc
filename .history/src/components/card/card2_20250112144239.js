@@ -1,0 +1,180 @@
+import React from "react";
+import styled from "styled-components";
+import v2 from "../../assets/img/v2.jpg";
+
+
+
+
+const StyledCard = styled.div`
+    position: relative;
+    width: 400px;
+    margin: 50px auto;
+    .card-image{
+        height: 400px;
+        width: 100%;
+        border-radius: 8px;
+        img{
+            border-radius: 18px;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+        }
+    }
+    .card-content{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: calc(100% - 36px);
+        padding: 10px;
+        bottom: 0;
+        background-color: white;
+        z-index: 10;
+        border-radius: 20px;
+        margin: 5px 55px;
+        .card-top{
+            display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+        }
+    }
+
+    
+`;
+
+// Styled components
+// const StyledCard = styled.div`
+//   position: relative;
+//   width: 400px;
+//   margin: 50px auto;
+// `;
+
+const CardImage = styled.div`
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+`;
+
+const CardIMG = styled.img`
+  border-radius: 18px;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+`;
+
+const CardContent = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: calc(100% - 36px);
+  padding: 10px;
+  bottom: 0;
+  background-color: white;
+  z-index: 10;
+  border-radius: 20px;
+  margin: 5px 55px;
+`;
+
+const CardTop = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+`;
+
+const CardUser = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+`;
+
+const UserAvatar = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 100rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-start;
+`;
+
+const CardFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const CardTitle = styled.h3`
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+`;
+
+const CardNumber = styled.span`
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(to right, #e66465, #9198e5);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+`;
+
+const UserName = styled.span`
+  font-weight: 300;
+  font-size: 16px;
+`;
+
+const CardIcm = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-right: 30px;
+`;
+
+const CardIN = styled.span`
+  font-size: 15px;
+  font-weight: bold;
+`;
+
+const CardINIMG = styled.img`
+  width: 10%;
+`;
+//crt+alt+L =>consolog
+const Card2 = () => {
+
+    return (
+        <StyledCard >
+
+            <div class="card-image">
+                <img
+                    src="https://cdn.dribbble.com/userupload/17117959/file/original-2a01fcbb866d356d539462a5ab1b2d00.jpg?format=webp&resize=450x338&vertical=center"
+                    alt=""
+                />
+            </div>
+
+            <div class="card-content">
+                <div className="card-top">
+                    <CardUser>
+                        <UserAvatar src={v2} alt="" />
+                        <UserName>@Doffy</UserName>
+                    </CardUser>
+                    <CardIcm>
+                        <CardINIMG
+                            src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
+                            alt="heart"
+                        />
+                        <CardIN>256</CardIN>
+                    </CardIcm>
+                </div>
+                <CardFooter>
+                    <CardTitle>Comics Person</CardTitle>
+                    <CardNumber>12,000 YSL</CardNumber>
+                </CardFooter>
+            </div>
+        </StyledCard>
+    );
+};
+
+export default Card2;

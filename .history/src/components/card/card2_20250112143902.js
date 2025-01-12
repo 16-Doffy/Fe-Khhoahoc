@@ -2,12 +2,26 @@ import React from "react";
 import styled from "styled-components";
 import v2 from "../../assets/img/v2.jpg";
 
-// Styled components
+
+
+
 const StyledCard = styled.div`
-  position: relative;
-  width: 400px;
-  margin: 50px auto;
+    position: relative;
+    width: 400px;
+    margin: 50px auto;
+    .card-image{
+        height: 400px;
+        width: 100%;
+        border-radius: 8px;
+    }
 `;
+
+// Styled components
+// const StyledCard = styled.div`
+//   position: relative;
+//   width: 400px;
+//   margin: 50px auto;
+// `;
 
 const CardImage = styled.div`
   height: 400px;
@@ -101,16 +115,17 @@ const CardINIMG = styled.img`
   width: 10%;
 `;
 //crt+alt+L =>consolog
-const Card = () => {
+const Card2 = () => {
   
   return (
-    <StyledCard>
-      <CardImage>
+    <StyledCard >
+
+    <div class="card-image">
         <CardIMG
           src="https://cdn.dribbble.com/userupload/17117959/file/original-2a01fcbb866d356d539462a5ab1b2d00.jpg?format=webp&resize=450x338&vertical=center"
           alt=""
         />
-      </CardImage>
+      </div>
 
       <CardContent>
         <CardTop>
@@ -135,4 +150,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default Card2;

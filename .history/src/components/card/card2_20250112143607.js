@@ -2,12 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import v2 from "../../assets/img/v2.jpg";
 
-// Styled components
+
+
+
 const StyledCard = styled.div`
-  position: relative;
-  width: 400px;
-  margin: 50px auto;
+    position: relative;
 `;
+
+// Styled components
+// const StyledCard = styled.div`
+//   position: relative;
+//   width: 400px;
+//   margin: 50px auto;
+// `;
 
 const CardImage = styled.div`
   height: 400px;
@@ -101,7 +108,7 @@ const CardINIMG = styled.img`
   width: 10%;
 `;
 //crt+alt+L =>consolog
-const Card = () => {
+const Card2 = () => {
   
   return (
     <StyledCard>
@@ -135,4 +142,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default Card2;

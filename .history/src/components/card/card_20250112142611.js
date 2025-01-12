@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import v2 from "../../assets/img/v2.jpg";
 
 // Styled components

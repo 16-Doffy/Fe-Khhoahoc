@@ -101,7 +101,7 @@ const CardINIMG = styled.img`
   width: 10%;
 `;
 //crt+alt+L =>consolog
-const Card = () => {
+const Card2 = () => {
   
   return (
     <StyledCard>
@@ -135,4 +135,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default Card2;

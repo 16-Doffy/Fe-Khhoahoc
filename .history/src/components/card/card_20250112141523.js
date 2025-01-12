@@ -1,28 +1,29 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
 import v2 from "../../assets/img/v2.jpg";
 
-// Styled components
+// const StyledCard = styled.tag(h1, h2 , dic , span .....)``
+// CSS-in-JS (=CSX)
+
 const StyledCard = styled.div`
   position: relative;
   width: 400px;
   margin: 50px auto;
 `;
-
-const CardImage = styled.div`
+const CardIAMGE = styled.div`
   height: 400px;
   width: 100%;
   border-radius: 8px;
 `;
-
 const CardIMG = styled.img`
   border-radius: 18px;
   display: block;
+
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
 `;
-
 const CardContent = styled.div`
   position: absolute;
   left: 50%;
@@ -35,20 +36,18 @@ const CardContent = styled.div`
   border-radius: 20px;
   margin: 5px 55px;
 `;
-
 const CardTop = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
 `;
-
 const CardUser = styled.div`
   display: flex;
   align-items: center;
+
   column-gap: 10px;
 `;
-
 const UserAvatar = styled.img`
   width: 30px;
   height: 30px;
@@ -58,23 +57,26 @@ const UserAvatar = styled.img`
   display: flex;
   justify-content: flex-start;
 `;
-
 const CardFooter = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
-
 const CardTitle = styled.h3`
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 500px;
   color: black;
 `;
-
 const CardNumber = styled.span`
   font-size: 18px;
   font-weight: bold;
   background: linear-gradient(to right, #e66465, #9198e5);
+
+  ${(props) =>
+    props.secondary &&
+    css`
+      background: linear-gradient(to right, rgb(6, 4, 128), rgb(6, 231, 126));
+    `};
   -webkit-background-clip: text;
   color: transparent;
   background-clip: text;
@@ -84,33 +86,29 @@ const UserName = styled.span`
   font-weight: 300;
   font-size: 16px;
 `;
-
 const CardIcm = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   padding-right: 30px;
 `;
-
 const CardIN = styled.span`
   font-size: 15px;
   font-weight: bold;
 `;
-
 const CardINIMG = styled.img`
   width: 10%;
 `;
-//crt+alt+L =>consolog
+
 const Card = () => {
-  
   return (
     <StyledCard>
-      <CardImage>
+      <CardIAMGE>
         <CardIMG
           src="https://cdn.dribbble.com/userupload/17117959/file/original-2a01fcbb866d356d539462a5ab1b2d00.jpg?format=webp&resize=450x338&vertical=center"
           alt=""
         />
-      </CardImage>
+      </CardIAMGE>
 
       <CardContent>
         <CardTop>
@@ -118,6 +116,9 @@ const Card = () => {
             <UserAvatar src={v2} alt="" />
             <UserName>@Doffy</UserName>
           </CardUser>
+          {/* <Card256>
+          <img src={h1} alt="heart"/>
+          </Card256> */}
           <CardIcm>
             <CardINIMG
               src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
@@ -127,8 +128,8 @@ const Card = () => {
           </CardIcm>
         </CardTop>
         <CardFooter>
-          <CardTitle>Comics Person</CardTitle>
-          <CardNumber>12,000 YSL</CardNumber>
+          <CardTitle>Comisc Preson</CardTitle>
+          <CardNumber secondary>12,000 YSL</CardNumber>
         </CardFooter>
       </CardContent>
     </StyledCard>
