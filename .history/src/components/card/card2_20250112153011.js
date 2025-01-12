@@ -43,7 +43,6 @@ const StyledCard = styled.div`
         .card-username {
           font-weight: 300;
           font-size: 16px;
-          color: ${props => props.theme.orange};
         }
       }
       .card-icm {
@@ -70,7 +69,7 @@ const StyledCard = styled.div`
       .card-title {
         font-size: 18px;
         font-weight: 500;
-        color: ${props => props.theme.colors.blue};
+        color: ${props => props.theme.color.blue};
       }
       .card-number {
         font-size: 18px;

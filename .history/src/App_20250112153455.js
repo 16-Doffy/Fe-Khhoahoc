@@ -12,8 +12,7 @@ const theme = {
   //wanna change color in the future come here to change
   colors:{
     blue:"#2979ff",
-  },
-  orange:"#ffa440"
+  }
 };
 const App = () => {
   return (
