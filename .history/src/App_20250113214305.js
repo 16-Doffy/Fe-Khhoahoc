@@ -1,13 +1,11 @@
 
 import "./App.css";
-import HackerNews from "./components/news/HackerNews";
-
-
+import Timer from "./components/timer/Timer";
 
 const App = () => {
   return (
     
-    <HackerNews></HackerNews>
+    <Timer></Timer>
   );
 };
 

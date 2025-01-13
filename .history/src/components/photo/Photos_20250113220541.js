@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const getRandomPhotos = (page) => {
@@ -14,10 +14,10 @@ const getRandomPhotos = (page) => {
 
 const Photos = () => {
   const [randomPhotos, setRandomPhotos] = useState([]); //dùng useState lấy data ra ngoài
-  const [nextPage, setNextPage] = useState(1);
-  // console.log("outside");
+  const [nextPage, setNextPage] = useState([1]);
+  console.log("outside");
   const handleLoadMorePhotos = useRef ({});
-   handleLoadMorePhotos.curent = async () => {
+   handleLoadMorePhotos.curent =async () => {
     const images = await getRandomPhotos(nextPage);
     const newPhotos = [...randomPhotos, ...images];
     setRandomPhotos(newPhotos);

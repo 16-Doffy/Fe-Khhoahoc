@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 
 const getRandomPhotos = (page) => {
@@ -13,23 +13,25 @@ const getRandomPhotos = (page) => {
 };
 
 const Photos = () => {
-  const [randomPhotos, setRandomPhotos] = useState([]); //dùng useState lấy data ra ngoài
+  const [randomPhotos, setRandomPhotos] = useState([]); // Store random photos
   const [nextPage, setNextPage] = useState(1);
-  // console.log("outside");
-  const handleLoadMorePhotos = useRef ({});
-   handleLoadMorePhotos.curent = async () => {
+
+  // handleLoadMorePhotos function wrapped in useCallback to avoid unnecessary re-creations
+  const handleLoadMorePhotos = useCallback(async () => {
     const images = await getRandomPhotos(nextPage);
     const newPhotos = [...randomPhotos, ...images];
     setRandomPhotos(newPhotos);
     setNextPage(nextPage + 1);
-  };
+  }, [randomPhotos, nextPage]);
+
   useEffect(() => {
-    handleLoadMorePhotos.curent();
+    handleLoadMorePhotos(); // Load photos on initial mount
   }, [handleLoadMorePhotos]);
+
   return (
     <div>
-      <div className="grid grid-cols-4 gap-5 p-5 ">
-        {randomPhotos.map.length > 0 &&
+      <div className="grid grid-cols-4 gap-5 p-5">
+        {randomPhotos.length > 0 &&
           randomPhotos.map((item, index) => (
             <div
               key={`${item.download_url}${index}`}
@@ -46,7 +48,7 @@ const Photos = () => {
 
       <div className="text-center">
         <button
-          onClick={handleLoadMorePhotos.curent}
+          onClick={handleLoadMorePhotos} // Load more photos on button click
           className="inline-block px-8 py-4 bg-purple-700 text-white"
         >
           Load more
@@ -57,5 +59,3 @@ const Photos = () => {
 };
 
 export default Photos;
-// https://picsum.photos/v2/list?page=2&limit=100 page
-//https://picsum.photos/v2/list list

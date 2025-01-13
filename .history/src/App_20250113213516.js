@@ -1,13 +1,11 @@
 
 import "./App.css";
-import HackerNews from "./components/news/HackerNews";
-
-
+import Counter from "./components/count/count";
 
 const App = () => {
   return (
     
-    <HackerNews></HackerNews>
+    <Counter></Counter>
   );
 };
 

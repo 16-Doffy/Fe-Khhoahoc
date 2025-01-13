@@ -1,13 +1,10 @@
 
 import "./App.css";
-import HackerNews from "./components/news/HackerNews";
-
-
-
+import Photos from "./components/photo/Photos";
 const App = () => {
   return (
-    
-    <HackerNews></HackerNews>
+    // <Photos />
+    <div>cc</div>
   );
 };
 
