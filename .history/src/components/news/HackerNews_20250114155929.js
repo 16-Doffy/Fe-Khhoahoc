@@ -8,13 +8,13 @@ const HackerNews = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const handleFetchResponse = useRef({});
-  const [url, setUrl] = useState(
-    `http://hn.algolia.com/api/v1/search?query=${query}`
-  );
+  const [url, setUrl] = useState(`http://hn.algolia.com/api/v1/search?query=${query}`)
   handleFetchResponse.curent = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(
+        `http://hn.algolia.com/api/v1/search?query=${query}`
+      );
       setHits(response.data?.hits || []);
       setLoading(false);
     } catch {
@@ -31,26 +31,19 @@ const HackerNews = () => {
   }, [url]);
   return (
     <div className=" mx-auto mb-5 mt-5 p-5 rounded-lg shadow-md w-2/4">
-      <div className="flex mb-5 mt-5 gap-x-5">
-        <input
-          type="text"
-          className="
+    <div class="flex mb-5 mt-5 gap-x-5">
+    <input
+        type="text"
+        className="
           border border-blue-1000
           text-black p-5  mt-5 block w-full
            rounded-md focus:border-blue-400"
-          placeholder="Enter your keyword..."
-          defaultValue={query} //lúc này quert has data when url change, components will render 
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button
-          onClick={() =>
-            setUrl(`http://hn.algolia.com/api/v1/search?query=${query}`)
-          }
-          className="bg-blue-500 text-white font-semibold mt-5 p-1 flex-shrink-0 rounded-lg"
-        >
-          Fetching
-        </button>
-      </div>
+        placeholder="Enter your keyword..."
+        defaultValue={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <button onClick={() => setUrl(`http://hn.algolia.com/api/v1/search?query=${query}`)} className="bg-blue-500 text-white font-semibold mt-5 p-1 flex-shrink-0 rounded-lg">Fetching</button>
+    </div>
       {loading && (
         <div
           className=" loading w-8 h-8  rounded-full  border-blue-300 border-4 
@@ -58,19 +51,18 @@ const HackerNews = () => {
         ></div>
       )}
       {!loading && error && <p className="text-red-400 my-5">{error}</p>}
-      <div className="flex flex-wrap gap-5">
+      <div class="flex flex-wrap gap-5">
         {!loading &&
           hits.length > 0 &&
-          hits.map((item, index) => {
-            if (!item.title || item.title.length <= 0) return null;
-            return (
+          hits.map((item, index) => (
             <h3
-              className=" p-3 bg-gray-300 rounded-sm"
+              className="
+             p-3 bg-gray-300 rounded-sm"
               key={item.title}
             >
               {item.title}
             </h3>
-          )})}
+          ))}
       </div>
     </div>
   );

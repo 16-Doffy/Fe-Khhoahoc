@@ -31,7 +31,7 @@ const HackerNews = () => {
   }, [url]);
   return (
     <div className=" mx-auto mb-5 mt-5 p-5 rounded-lg shadow-md w-2/4">
-      <div className="flex mb-5 mt-5 gap-x-5">
+      <div class="flex mb-5 mt-5 gap-x-5">
         <input
           type="text"
           className="

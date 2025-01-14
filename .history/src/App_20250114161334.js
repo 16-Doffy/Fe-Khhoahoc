@@ -1,6 +1,6 @@
 
 import "./App.css";
-
+import HackerNews from "./components/news/HackerNews";
 import HackerNewsReducer from "./components/news/HackerNewsReducer";
 
 

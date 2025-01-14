@@ -31,7 +31,7 @@ const HackerNews = () => {
   }, [url]);
   return (
     <div className=" mx-auto mb-5 mt-5 p-5 rounded-lg shadow-md w-2/4">
-      <div className="flex mb-5 mt-5 gap-x-5">
+      <div class="flex mb-5 mt-5 gap-x-5">
         <input
           type="text"
           className="
@@ -39,7 +39,7 @@ const HackerNews = () => {
           text-black p-5  mt-5 block w-full
            rounded-md focus:border-blue-400"
           placeholder="Enter your keyword..."
-          defaultValue={query} //lúc này quert has data when url change, components will render 
+          defaultValue={query}
           onChange={(e) => setQuery(e.target.value)}
         />
         <button
@@ -58,19 +58,18 @@ const HackerNews = () => {
         ></div>
       )}
       {!loading && error && <p className="text-red-400 my-5">{error}</p>}
-      <div className="flex flex-wrap gap-5">
+      <div class="flex flex-wrap gap-5">
         {!loading &&
           hits.length > 0 &&
-          hits.map((item, index) => {
-            if (!item.title || item.title.length <= 0) return null;
-            return (
+          hits.map((item, index) => (
             <h3
-              className=" p-3 bg-gray-300 rounded-sm"
+              className="
+             p-3 bg-gray-300 rounded-sm"
               key={item.title}
             >
               {item.title}
             </h3>
-          )})}
+          ))}
       </div>
     </div>
   );

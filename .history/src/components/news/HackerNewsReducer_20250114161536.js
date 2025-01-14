@@ -1,8 +1,14 @@
 import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
-// import lodash from "lodash";
-// http://hn.algolia.com/api/v1/search?query=react
-const HackerNews = () => {
+
+const intialSate = {
+  hits:[],
+  query:'',
+  loading:true,
+  error:'',
+  url:"http://hn.algolia.com/api/v1/search?query=''"
+}
+const HackerNewsReducer = () => {
   const [hits, setHits] = useState([]);
   const [query, setQuery] = useState("react");
   const [loading, setLoading] = useState(true);
@@ -76,4 +82,4 @@ const HackerNews = () => {
   );
 };
 
-export default HackerNews;
+export default HackerNewsReducer;
