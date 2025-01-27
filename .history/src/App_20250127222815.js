@@ -1,20 +1,20 @@
-
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
-import InputField from "./components/UseRef/InputField";
-
+import StopWatch from "./components/UseRef/StopWatch";
 
 function App() {
+  
+
   return (
     <div>
- 
-     <InputField ></InputField>
+     <StopWatch />
     </div>
   );
 }
 
 export default App;
 
-
+//khi state thay đổi cmponent sẽ re-render
 
 //<CardList><Card2/>
 // const theme = {

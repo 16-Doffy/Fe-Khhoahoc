@@ -1,13 +1,13 @@
 
 import "./App.css";
-import InputField from "./components/UseRef/InputField";
-
+import StopWatch from "./components/UseRef/StopWatch";
 
 function App() {
+  
+
   return (
     <div>
- 
-     <InputField ></InputField>
+     <StopWatch />
     </div>
   );
 }
