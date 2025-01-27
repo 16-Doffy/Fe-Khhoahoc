@@ -14,15 +14,7 @@ function App() {
 
   const handleStop = () => {
       clearInterval(timerRef.current);
-      timerRef.current = null;
   }
-
-  useEffect (() => {
-
-      return () => {
-        clearInterval(timerRef.current);
-      };
-  }, []);
   return (
     <div>
      <h3>Timer: {count}s</h3>

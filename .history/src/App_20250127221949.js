@@ -20,9 +20,9 @@ function App() {
   useEffect (() => {
 
       return () => {
-        clearInterval(timerRef.current);
-      };
-  }, []);
+        clearInterval(timerRef.current)
+      }
+  })
   return (
     <div>
      <h3>Timer: {count}s</h3>

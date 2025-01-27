@@ -21,8 +21,8 @@ function App() {
 
       return () => {
         clearInterval(timerRef.current);
-      };
-  }, []);
+      }
+  })
   return (
     <div>
      <h3>Timer: {count}s</h3>

@@ -1,0 +1,41 @@
+import React, { useEffect, useRef, useState } from "react";
+
+const Dropdown = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
+  useEffect(() => {
+    function handleClickOutDropDown(e) {
+      if (!dropdownRef.current && dropdownRef.current.contains(e.target)) {
+        console.log("click outside dropdown");
+        setShowDropdown(false);
+    }
+        //   } else {
+    //     console.log("click inside dropdown");
+    //   }
+    }
+    document.addEventListener("click", handleClickOutDropDown);
+    return () => {
+      document.removeEventListener("click", handleClickOutDropDown);
+    };
+  }, []);
+  return (
+    <div className="relative w-full max-w-[400]" ref={dropdownRef}>
+      <div
+        className="p-5 border border-gray-900 rounded-lg cursor-pointer"
+        onClick={() => setShowDropdown(!showDropdown)}
+      >
+        Selected <span className="ml-30">&#8711;</span>
+      </div>
+
+      {showDropdown && (
+        <div className="border border-gray-200 rounded-lg absolute top-full left-0 w-full bg-white">
+          <div className="p-5 cursor-pointer">JaVa</div>
+          <div className="p-5 cursor-pointer">Vite</div>
+          <div className="p-5 cursor-pointer">React</div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Dropdown;
