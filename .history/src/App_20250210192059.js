@@ -1,12 +1,11 @@
 
 import "./App.css";
-import Input from "./components/Form/Input";
 
 
 function App() {
   return (
     <div>
- <Input />
+ 
    
     </div>
   );
