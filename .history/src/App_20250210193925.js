@@ -1,16 +1,21 @@
+
 import "./App.css";
-import SignUpForm from "./components/Form/SignUpForm";
+import Form from "./components/Form/Form";
+
 
 
 function App() {
   return (
     <div>
-      <SignUpForm />
+ <Form />
+   
     </div>
   );
 }
 
 export default App;
+
+
 
 //<CardList><Card2/>
 // const theme = {

@@ -1,16 +1,22 @@
+
 import "./App.css";
-import SignUpForm from "./components/Form/SignUpForm";
+import Form from "./components/Form/Form";
+import MovieSearchApp from "./components/MovieSearchApp";
+
 
 
 function App() {
   return (
     <div>
-      <SignUpForm />
+ <MovieSearchApp />
+   
     </div>
   );
 }
 
 export default App;
+
+
 
 //<CardList><Card2/>
 // const theme = {

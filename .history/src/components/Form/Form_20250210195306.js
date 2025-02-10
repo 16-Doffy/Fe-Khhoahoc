@@ -1,34 +1,39 @@
 import React, { useState } from "react";
 
-const Input = () => {
-  const [fullName, setFullName] = useState("");
-  const handleInputChange = (event) => {
-    console.log(event.target.value); //.value de lay gtri
-    setFullName(event.target.value);
-  };
-  const [message, setMessage] = useState("");
-
-  const handleTextareaChange = (event) => {
-    setMessage(event.target.value);
-  };
-  const [country, setCountry] = useState("");
-  const handleSelectChange = (e) => {
-    setCountry(e.target.value);
-  };
+const Form = () => {
+  const [values, setValues] = useState ({
+    fullname: "",
+    email:"",
+  });
+  //obj.property: dont notation
+  //obj[property]
+const handleInputChange = (e)=>{
+  setValues({
+    ...values,
+    [e.target.name]: e.target.value,
+  });
+}
   return (
     <div className="p-5">
-      {fullName}
-
+    <div class="flex gap-x-3">
       <input
         type="text"
-        name="full ame"
+        name="fullname"
         id=""
         placeholder="Enter your name"
         className="w-full max-w-[300px] p-5 border border-gray-200 rounded-lg"
+       onChange={handleInputChange}
+      />    
+
+   <input
+        type="email"
+        name="email"
+        id=""
+        placeholder="Enter your email"
+        className="w-full max-w-[300px] p-5 border border-gray-200 rounded-lg"
         onChange={handleInputChange}
       />
-      {message}
-      <textarea
+      {/* <textarea
         id=""
         className="w-full max-w-[300px] p-5 border border-gray-200 rounded-lg"
         placeholder="Enter your messgae"
@@ -40,9 +45,10 @@ const Input = () => {
         <option value="VN">VN</option>
         <option value="USA">USE</option>
         <option value="JS">JS</option>
-      </select>
+      </select> */}
+      </div> 
     </div>
   );
 };
 
-export default Input;
+export default Form;
