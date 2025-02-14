@@ -1,0 +1,91 @@
+import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup" //sd chung vs hook form
+import * as yup from "yup"
+
+const schemaValidation = yup.object({
+  firstName:yup.string().required("pls enter your firstname")
+  .max(10,"Must be 10 character or less"),
+
+});
+const SignUpForm = () => {
+  const {
+    register,
+    handleSubmit,
+
+    formState: { errors, isSubmitting , isValid },
+  } = useForm({
+    resolver:yupResolver(schemaValidation),
+  });
+  // console.log("error", errors);
+    console.log("isSubmitting", isSubmitting);
+  const onSubmited = (values) => {
+    //onsubmited here = function
+    setTimeout(() => {
+      console.log(values);
+    },5000)
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit(onSubmited)} //here onsubmit = event
+      className="p-10 w-full max-w-[500px] mx-auto"
+    >
+      <div className="flex flex-col gap-2 mb-5">
+        <label htmlFor="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          placeholder="enter your firstName"
+          className="p-4 rounded-md border border-gray-600"
+          {...register("firstName")}
+          // {...register("firstName", {
+          //   required: true,
+          //   maxLength: 10,
+          // })}
+        />
+        {errors?.firstName && (
+          <div className="text-red-700">
+          {errors.firstName?.message}
+          </div>
+        )}
+        {/* {errors?.firstName?.type === "maxLength" && (
+          <div className="text-red-700">Must be 10 characters or less</div>
+        )} */}
+
+      </div>
+
+      <div className="flex flex-col gap-2 mb-5">
+        <label htmlFor="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          placeholder="enter your lastName"
+          className="p-4 rounded-md border border-gray-600"
+          {...register("lastName")}
+        />
+      </div>
+
+      <div className="flex flex-col gap-2 mb-5">
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="enter your email"
+          className="p-4 rounded-md border border-gray-600"
+          {...register("email")}
+        />
+      </div>
+      <div>
+        <button
+          type="submit"
+          className="w-full p-4 bg-blue-600 text-white font-semibold rounded-lg"
+        >
+          <div class="w-5 h-5 border-2 border-white border-t-2 border-t-transparent rounded-full animate-spin">Submit</div>
+        </button>
+      </div>
+    </form>
+  );
+};
+
+export default SignUpForm;

@@ -3,15 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hookform/resolvers": "^4.0.0",
     "axios": "^1.7.9",
     "formik": "^2.4.6",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.54.2",
     "react-loading-skeleton": "^3.5.0",
+    "react-router-dom": "^7.1.5",
     "react-scripts": "^5.0.1",
     "styled-components": "^6.1.14",
-    "web-vitals": "^4.2.4"
+    "web-vitals": "^4.2.4",
+    "yup": "^1.6.1"
   },
   "scripts": {
     "start": "set GENERATE_SOURCEMAP=true && react-scripts start",
